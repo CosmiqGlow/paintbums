@@ -26,6 +26,7 @@ public class CancelListener implements Listener {
 
   @EventHandler
   public void onHelpCommand(PlayerCommandPreprocessEvent event) {
+    //hallo
 
   }
 }
