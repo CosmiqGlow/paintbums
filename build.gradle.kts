@@ -14,6 +14,7 @@ repositories {
             includeGroup("org.spigotmc")
         }
     }
+    maven ( url = "https://oss.sonatype.org/content/repositories/snapshots" )
 }
 
 dependencies {
