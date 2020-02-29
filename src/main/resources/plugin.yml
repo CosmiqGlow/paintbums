@@ -1,0 +1,6 @@
+name: Paintbums
+authors: [NightyIO, monst12]
+version: 1.0.0-SNAPSHOT
+api-version: "1.15"
+prefix: Paintbums
+main: de.cosmiqglow.paintbums.Paintbums
