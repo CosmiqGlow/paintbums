@@ -23,10 +23,4 @@ public class CancelListener implements Listener {
   public void onItemConsume(PlayerItemConsumeEvent event) {
     event.setCancelled(true);
   }
-
-  @EventHandler
-  public void onHelpCommand(PlayerCommandPreprocessEvent event) {
-    //hallo
-
-  }
 }
