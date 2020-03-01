@@ -15,7 +15,7 @@ public class Paintbums extends JavaPlugin {
     }
 
     public void loadConfig() {
-        getConfig().addDefault("Chat-Options.Use provided Chat", true );
+        getConfig().addDefault("Chat-Options.provided-chat", true );
         getConfig().options().copyDefaults(true);
         saveConfig();
         reloadConfig();
