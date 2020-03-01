@@ -6,12 +6,20 @@ public class Paintbums extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        super.onEnable();
+        loadConfig();
     }
 
     @Override
     public void onDisable() {
         super.onDisable();
     }
+
+    public void loadConfig() {
+        getConfig().addDefault("Chat-Options.Use provided Chat", true );
+        getConfig().options().copyDefaults(true);
+        saveConfig();
+        reloadConfig();
+    }
+
 
 }
