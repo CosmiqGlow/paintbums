@@ -1,5 +1,8 @@
 package de.cosmiqglow.paintbums;
 
+import de.cosmiqglow.paintbums.listeners.CancelListener;
+import de.cosmiqglow.paintbums.listeners.ChatListener;
+import de.cosmiqglow.paintbums.listeners.CommandListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Paintbums extends JavaPlugin {
@@ -7,6 +10,7 @@ public class Paintbums extends JavaPlugin {
     @Override
     public void onEnable() {
         loadConfig();
+        registerListeners();
     }
 
     @Override
@@ -14,11 +18,19 @@ public class Paintbums extends JavaPlugin {
         super.onDisable();
     }
 
-    public void loadConfig() {
-        getConfig().addDefault("Chat-Options.provided-chat", true );
+    private void loadConfig() {
+        getConfig().addDefault("chat-options.use-provided-chat", true );
         getConfig().options().copyDefaults(true);
         saveConfig();
         reloadConfig();
+    }
+
+    private void registerListeners() {
+        if (getConfig().getBoolean("Chat-Options.provided-chat"))
+            this.getServer().getPluginManager().registerEvents(new ChatListener(), this);
+
+        this.getServer().getPluginManager().registerEvents(new CancelListener(), this);
+        this.getServer().getPluginManager().registerEvents(new CommandListener(), this);
     }
 
 
