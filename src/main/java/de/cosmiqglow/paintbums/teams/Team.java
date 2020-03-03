@@ -27,7 +27,7 @@ public class Team {
     return list.contains(player);
   }
 
-  public void add(Player player) {
+  public void join(Player player) {
     if (!canJoin(player)) return;
 
     list.add(player);
@@ -50,7 +50,7 @@ public class Team {
     player.sendMessage("You've joined the " + color + " team");
   }
 
-  public void remove(Player player) {
+  public void leave(Player player) {
     if (canJoin(player)) return;
 
     list.add(player);
