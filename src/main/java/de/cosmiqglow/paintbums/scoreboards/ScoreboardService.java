@@ -17,8 +17,6 @@ import java.util.Objects;
 
 public class ScoreboardService {
 
-  //map contains all scoreboards
-  private Map<Integer,Scoreboard> map = new HashMap<>();
   private static ScoreboardService instance = new ScoreboardService();
 
   private final Scoreboard board;
@@ -27,7 +25,6 @@ public class ScoreboardService {
   private ScoreboardService() {
     board = Objects.requireNonNull(Bukkit.getScoreboardManager()).getNewScoreboard();
     objective = board.registerNewObjective("game", "dummy", " §e§lPaintbums ");
-    map.put(0, board);
 
     Team basic = board.registerNewTeam("basic");
 
@@ -51,19 +48,6 @@ public class ScoreboardService {
     TeamService.getInstance().getTeams().forEach(team -> objective.getScore(team.getName()).setScore(0));
   }
 
-  public boolean add(int id) {
-    if (map.containsKey(id)) return false;
-    map.put(id, Bukkit.getScoreboardManager().getNewScoreboard());
-    return true;
-  }
-
-  public boolean remove(int id) {
-    if (!map.containsKey(id)) return false;
-    map.remove(id);
-    return true;
-  }
-
-  //TODO: Implement possibilty to use more than the standard board
   public void registerTeams(List<PaintbumsTeam> teams) {
     teams.stream().map(team -> team.getName()).forEach(board::registerNewTeam);
   }

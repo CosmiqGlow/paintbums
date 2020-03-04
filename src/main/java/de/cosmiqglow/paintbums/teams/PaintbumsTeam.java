@@ -3,13 +3,16 @@ package de.cosmiqglow.paintbums.teams;
 import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.configuration.serialization.ConfigurationSerializable;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class PaintbumsTeam {
+public class PaintbumsTeam implements ConfigurationSerializable {
 
   private final String name;
   private final Color color;
@@ -97,4 +100,16 @@ public class PaintbumsTeam {
   }
 
   public int getPoints() {return points;}
+
+  @Override
+  public Map<String, Object> serialize() {
+    Map<String,Object> map = new HashMap<>();
+
+    map.put("name", name);
+    map.put("color", color);
+    map.put("spawn", spawn);
+    map.put("points", points);
+
+    return map;
+  }
 }
