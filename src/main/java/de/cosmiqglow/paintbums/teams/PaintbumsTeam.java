@@ -9,7 +9,7 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import java.util.List;
 
-public class Team {
+public class PaintbumsTeam {
 
   private final String name;
   private final Color color;
@@ -17,7 +17,7 @@ public class Team {
   private int points;
   private List<Player> list;
 
-  public Team(final String name, final Color color, Location spawn) {
+  public PaintbumsTeam(final String name, final Color color, Location spawn) {
     this.name = name;
     this.color = color;
     this.spawn = spawn;
@@ -96,5 +96,5 @@ public class Team {
     return name;
   }
 
-
+  public int getPoints() {return points;}
 }

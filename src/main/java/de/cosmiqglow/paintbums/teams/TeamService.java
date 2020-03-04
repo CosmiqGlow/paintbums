@@ -9,10 +9,10 @@ import java.util.concurrent.ThreadLocalRandom;
 public class TeamService {
 
   private static TeamService instance = new TeamService(new ArrayList<>());
-  private List<Team> list;
+  private List<PaintbumsTeam> list;
   private int counter;
 
-  private TeamService(List<Team> list) {
+  private TeamService(List<PaintbumsTeam> list) {
     this.list = list;
     counter = 0;
   }
@@ -21,14 +21,14 @@ public class TeamService {
     return instance;
   }
 
-  public boolean add(Team team) {
+  public boolean add(PaintbumsTeam team) {
     if (list.contains(team)) return false;
 
     list.add(team);
     return true;
   }
 
-  public boolean remove(Team team) {
+  public boolean remove(PaintbumsTeam team) {
     if (!list.contains(team)) return false;
 
     list.remove(team);
@@ -49,9 +49,7 @@ public class TeamService {
     list.get(counter++%list.size()).join(player);
   }
 
-  public List<Team> getTeams() {
+  public List<PaintbumsTeam> getTeams() {
     return list;
   }
-
-
 }
