@@ -1,6 +1,6 @@
 package de.cosmiqglow.paintbums.phases;
 
-import de.cosmiqglow.fluctus.TimedGamePhase;
+import de.cosmiqglow.fluctu.TimedGamePhase;
 import de.cosmiqglow.paintbums.listeners.LobbyDamageListener;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

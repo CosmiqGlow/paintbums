@@ -2,7 +2,7 @@ package de.cosmiqglow.paintbums.phases;
 
 import com.google.common.collect.ImmutableSet;
 import com.google.gson.internal.bind.util.ISO8601Utils;
-import de.cosmiqglow.fluctus.TimedGamePhase;
+import de.cosmiqglow.fluctu.TimedGamePhase;
 import de.cosmiqglow.paintbums.listeners.IngameDamageListener;
 import de.cosmiqglow.paintbums.listeners.LobbyDamageListener;
 import de.cosmiqglow.paintbums.listeners.LobbyInteractListener;

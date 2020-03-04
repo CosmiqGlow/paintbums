@@ -1,6 +1,6 @@
 package de.cosmiqglow.paintbums;
 
-import de.cosmiqglow.fluctus.ScheduledGamePhaseSeries;
+import de.cosmiqglow.fluctu.ScheduledGamePhaseSeries;
 import de.cosmiqglow.paintbums.listeners.CancelListener;
 import de.cosmiqglow.paintbums.listeners.ChatListener;
 import de.cosmiqglow.paintbums.listeners.CommandListener;
