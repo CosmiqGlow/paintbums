@@ -63,8 +63,9 @@ public class ScoreboardService {
     return true;
   }
 
+  //TODO: Implement possibilty to use more than the standard board
   public void registerTeams(List<PaintbumsTeam> teams) {
-    teams.stream().map(team -> team.getName()).forEach(team ->);
+    teams.stream().map(team -> team.getName()).forEach(board::registerNewTeam);
   }
 
   public void setupPlayer(Player player) {
